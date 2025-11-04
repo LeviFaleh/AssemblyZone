@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+body {
+  background-color: #efefef;
+}
+
+
+.logo {
+  text-align: center;
+  background: transparent;
+  margin: 0px auto;
+}
+
+.divLogo {
+  text-align: center;
+  background: #273060;
+  padding: 10px 0px;
+}
+
+
+
+*:active {
+  cursor: default;
+}
+
+body {
+  min-height: 100vh;
+   font-family: 'Orbitron', sans-serif;
+}
+
+/* Fonte futurista (Orbitron opcional via Google Fonts) */
+
+
+.navbar {
+  text-align: center;
+  background-color: #ffffff;
+  border-bottom: 2px solid #fff867;
+  font-family: 'Orbitron', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline-block;
+  font-size: 18px;
+  padding: 12px 50px;
+  margin: 10px 5px;
+  cursor: pointer;
+  color: #292929;
+  position: relative;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover visual futurista */
+.navbar ul li:hover {
+  background-color: #fff867;
+  color: #292929;
+  transform: scale(1.05);
+
+}
+
+/* Efeito de linha animada abaixo do item */
+.navbar ul li::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff867;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar ul li:hover::after {
+  width: 60%;
+}
+
+/* 
+.navbar {
+  text-align: center;
+  box-shadow: 1px 0px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline-block;
+
+  font-size: 20px;
+  padding: 15px 70px;
+  margin: 8px 0px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: opacity 0.15s;
+}
+
+
+
+ */
