@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+#  AssemblyZone
 
-## Getting Started
+A full-stack web application built with **Next.js**, **TypeScript**, and **Prisma ORM**, featuring user authentication via **Better Auth**.  
+This project combines both frontend and backend in a single Next.js monorepo.
 
-First, run the development server:
+---
 
-```bash
+## Features
+
+- ⚡ Full-stack app (frontend + backend)
+- 🔐 Authentication using [Better Auth](https://better-auth.com/)
+- 🗄️ Database powered by [Prisma ORM](https://www.prisma.io/)
+- 🧠 Built with **TypeScript** for type safety
+- 🪶 Modern UI using **React Server Components**
+- 🌐 Fully environment-configurable setup
+
+---
+
+## 🏗️ Project Setup
+
+### 1. Clone the repository
+
+git clone https://github.com/LeviFaleh/AssemblyZone.git
+cd AssemblyZone
+### 2. Install dependencies
+
+npm install
+# or
+yarn install
+# or
+pnpm install
+
+### 3. Set up environment variables
+Create a .env file in the root of the project with the following variables:
+
+
+# Database connection (example for PostgreSQL)
+DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/assemblyzone"
+
+# Better Auth credentials
+BETTER_AUTH_SECRET="your_better_auth_secret"
+BETTER_AUTH_PUBLIC_KEY="your_better_auth_public_key"
+
+# (optional) NextAuth or JWT keys if applicable
+NEXTAUTH_SECRET="your_nextauth_secret"
+⚠️ Replace placeholders with your actual database credentials and authentication keys.
+
+### 4. Generate Prisma client and apply migrations
+
+npx prisma generate
+npx prisma migrate dev --name init
+You can also open the Prisma Studio to inspect your database visually:
+
+
+npx prisma studio
+### 5. Run the development server
+
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open your browser at:
+👉 http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+AssemblyZone/
+│
+├── prisma/              # Prisma schema and migrations
+├── src/
+│   ├── app/             # Next.js 14+ app directory (routes, layouts, pages)
+│   ├── components/      # Reusable UI components
+│   ├── lib/             # Utilities, constants, and helper functions
+│   └── db/              # Prisma Conection
+│
+├── package.json
+├── prisma/schema.prisma
+├── tsconfig.json
+├── .env.example
+└── README.md
 
-## Learn More
+## Useful Commands
 
-To learn more about Next.js, take a look at the following resources:
+Command	Description
+npm run dev	Starts the Next.js development server
+npm run build	Builds the production bundle
+npm start	Runs the app in production mode
+npx prisma studio	Opens Prisma Studio
+npx prisma migrate dev	Applies database migrations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Testing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm run dev
