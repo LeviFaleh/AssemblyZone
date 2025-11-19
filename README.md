@@ -67,18 +67,30 @@ Then open your browser at:
 ## Project Structure
 
 AssemblyZone/
+
 │
 ├── prisma/              # Prisma schema and migrations
+
 ├── src/
+
 │   ├── app/             # Next.js 14+ app directory (routes, layouts, pages)
+
 │   ├── components/      # Reusable UI components
+
 │   ├── lib/             # Utilities, constants, and helper functions
+
 │   └── db/              # Prisma Conection
+
 │
+
 ├── package.json
+
 ├── prisma/schema.prisma
+
 ├── tsconfig.json
+
 ├── .env.example
+
 └── README.md
 
 ## Useful Commands
